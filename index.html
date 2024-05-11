@@ -72,6 +72,52 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
+          <!-- Blockfusion -->
+              <tr onmouseout="_3dseg_stop()" onmouseover="_3dseg_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <a href="https://yang-l1.github.io/blockfusion">
+                      <div class="two" id="3dseg_image" style="opacity: 0;">
+                        <img src="main_page/images/3dseg.png" width="160">
+                      </div>
+                      <img src="main_page/images/3dseg.png" width="160">
+                    </a>
+                  </div>
+
+                  <script type="text/javascript">
+                    function _3dseg_start() {
+                      document.getElementById('3dseg_image').style.opacity = 1;
+                    }
+                    function _3dseg_stop() {
+                      document.getElementById('3dseg_image').style.opacity = 0;
+                    }
+                    optnrt_stop();
+                  </script>
+                </td>
+
+                <td style="padding:20px;width:75%;vertical-align:middle">
+
+                  <a href="https://openreview.net/forum?id=4dZeBJ83oxk">
+                    <papertitle>
+                     3D Segmenter: 3D Transformer based Semantic Segmentation via 2D Panoramic Distillation                   </papertitle>
+                  </a>
+                  <br>
+
+                  Zhennan Wu, <b>Yang Li</b> , Yifei Huang, Lin Gu, Tatsuya Harada, and Hiroyuki Sato
+                  <br>
+                  <b>ICLR 2023 </b><br>
+                  <a href="https://openreview.net/forum?id=4dZeBJ83oxk">paper</a>|
+<!--                  <a href="https://www.youtube.com/watch?v=IdLHbru6G8s">video</a>|-->
+                  <a href="https://github.com/swwzn714/3DSegmenter">Code</a>
+
+                  <p>
+                  We propose the first 2D-to-3D knowledge distillation strategy to enhance 3D semantic segmentation model with knowledge embedded in the latent space of powerful 2D models.
+                  </p>
+
+                </td>
+              </tr>
+
+
 
 
              <!-- 3dsegmentor -->

@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>mip-NeRF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>BlockFusion</b>: Expandable 3D Scene Generation  <br> using Latent Tri-plane Extrapolation</br>
+                <small>
+                    <b>ACM Transaction on Graphics (SIGGRAPH 2024)</b>
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+
+                        <a href="https://scholar.google.com/citations?user=rDXxDawAAAAJ">
+                            Zhennan Wu  </a>
+<!--                        </br> The University of Tokyo-->
+                    </li>
+                    <li>
+                        <a href="https://yang-l1.github.io/">
+                            Yang Li  </a>
+<!--                        </br> Tencent-->
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=svfuXpwAAAAJ&hl=zh-CN">
+                            Han Yan </a>
+
+<!--                        </br> Shanghai Jiao Tong University-->
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=rv9ymNYAAAAJ&hl=zh-CN">
+                            Taizhang Shang </a>
+<!--                        </br> Tencent-->
+                    </li>
+                    <li>
+                        <a href="https://weixuansun.github.io/weixuansun-github.io/">
+                        Weixuan Sun </a>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=J6ylgW0AAAAJ&hl=zh-CN">
+                        Senbo Wang </a>
+                    </li><br>
+                    <li>
+                        <a href="linkedin.com/in/ruikai-cui-8185501a2">
+                        Ruikai Cui </a>
+                    </li>
+                    <li>
+                        <a href="https://weizheliu.github.io/">
+                            Weizhe Liu </a>
+<!--                        </br> Tencent-->
+                    </li>
+                    <li>
+                        <a href="https://www.nii.ac.jp/en/faculty/architecture/sato_hiroyuki/">
+                            Hiroyuki Sato </a>
+<!--                        </br> NII Japan, The University of Tokyo-->
+                    </li>
+                    <li>
+                        <a href="http://users.cecs.anu.edu.au/~hongdong/">
+                        Hongdong Li </a>
+<!--                        </br> Australian National University-->
+                    </li>
+                    <li>
+                        <a href="https://github.com/panji530">
+                        Pan Ji</a>
+<!--                        </br> Tencent-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2401.17053">
+                            <image src="img/paper.png" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=PxIBtd6G0mA">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code(Comming Soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+
+
+                <video id="openworld" width="100%" autoplay loop muted>
+                  <source src="img/open_world.mp4" type="video/mp4" />
+                </video>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                     Abstract
+                </h3>
+                <image src="img/teaser.jpg" class="img-responsive" alt="overview"><br>
+                <p class="text-justify">
+We present BlockFusion, a diffusion-based model that generates 3D scenes
+as unit blocks and seamlessly incorporates new blocks to extend the scene.
+BlockFusion is trained using datasets of 3D blocks that are randomly cropped
+from complete 3D scene meshes. Through per-block fitting, all training
+blocks are converted into the hybrid neural fields: with a tri-plane containing the geometry features, followed by a Multi-layer Perceptron (MLP) for
+decoding the signed distance values. A variational auto-encoder is employed
+to compress the tri-planes into the latent tri-plane space, on which the
+denoising diffusion process is performed. Diffusion applied to the latent
+representations allows for high-quality and diverse 3D scene generation.
+To expand a scene during generation, one needs only to append empty
+blocks to overlap with the current scene and extrapolate existing latent tri-
+planes to populate new blocks. The extrapolation is done by conditioning the
+generation process with the feature samples from the overlapping tri-planes
+during the denoising iterations. Latent tri-plane extrapolation produces
+semantically and geometrically meaningful transitions that harmoniously
+blend with the existing scene. A 2D layout conditioning mechanism is used to
+control the placement and arrangement of scene elements. Experimental results indicate that BlockFusion is capable of generating diverse, geometrically
+consistent and unbounded large 3D scenes with unprecedented high-quality
+shapes in both indoor and outdoor scenarios.
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BlockFusion Training Pipeline
+                </h3>
+                <p class="text-justify">
+                The training contains three steps:
+                First, the training 3D blocks are converted to raw tri-planes via per-block shape fitting.
+                Then, an auto-encoder compresses the raw tri-planes into a more compact latent tri-plane space.
+                Lastly, DDPM is trained to approximate the distributions of latent tri-planes, and during this process, layout control can also be integrated.
+                </p>
+                <p style="text-align:center;">
+                    <image src="img/pipeline.jpg"   class="img-responsive">
+                </p>
+                <p class="text-justify">
+                    We convert scene meshes to water-tight meshes and then randomly crop the meshes into cubic blocks. Per-block fitting to convert all training blocks into raw tri-planes. The raw tri-planes are compressed into a latent tri-plane space for efficient 3D representation. We train the diffusion model on the latent tri-plane
+space.
+                </p>
+
+                <p class="text-justify">
+                      To control the generation process, we add floor layout control by informing the model with 2D bounding box projections of objects:
+                </p>
+                <div class=”center”>
+
+                <video id="v0" width="65%" autoplay loop muted>
+                  <source src="img/output.mp4" type="video/mp4" />
+                </video>
+                </div>
+
+
+            </div>
+        </div>
+            
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Latent Tri-plane Extrapolation
+                </h3>
+                                 <p class="text-justify">
+                      We propose 3D aware denoising U-Net to facilitate diffusion training on tri-plane. We leverage the pre-trained latent tri-plane diffusion model to expand a scene:
+                </p>
+
+                <image src="img/pseudo_extra.jpg"  align="center" width="45%"  class="img-responsive">
+
+                <p style="text-align:center;">
+
+                <video id="v1" width="50%" autoplay loop muted>
+                  <source src="img/inference_new.mp4" type="video/mp4" />
+                </video>
+                </p>
+
+
+
+
+                <p style="text-align:center;">
+                    <image src="img/extra.jpg"   class="img-responsive">
+                </p>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
+                <p class="text-justify">
+                    We consider Text2Room [Höllein et al . 2023] as the baseline for indoor scene generation. Text2Room takes text prompt as input whereas ours is based on 2D layout map. For a fair comparison, we describe our input room layout using natural language and then concatenate it as part of the text prompt for Text2Room.
+                </p>
+                <video id="v2" width="100%" autoplay loop muted>
+                  <source src="img/comparison.mp4" type="video/mp4" />
+                </video>
+                <p class="text-justify">
+                    Using layout control to create rooms that do not exist in the training set.
+                </p>
+                <video id="v2" width="100%" autoplay loop muted>
+                  <source src="img/novel.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        
+            
+        <div class="row">
+<!--            <div class="col-md-20 col-md-offset-0">-->
+            <div class="col-md-8 col-md-offset-2">
+
+                <h3>
+                    Citation
+                </h3>
+
+
+
+                <div class="form-group col-md-20 col-md-offset-0">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{blockfusion,
+  title={BlockFusion: Expandable 3D Scene Generation using Latent Tri-plane Extrapolation},
+  author={Wu, Zhennan and Li, Yang and Yan, Han and Shang, Taizhang and Sun, Weixuan and Wang, Senbo and Cui, Ruikai and Liu, Weizhe and Sato, Hiroyuki and Li, Hongdong and Ji, Pan},
+  journal={ACM Transactions on Graphics},
+  volume={43},
+  number={4},
+  year={2024},
+  doi={10.1145/3658188}
+ }
+                    </textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
