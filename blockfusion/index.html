@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>mip-NeRF</title>
+    <title>BlockFusion</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,71 +40,114 @@
         <div class="row">
             <h2 class="col-md-12 text-center">
                 <b>BlockFusion</b>: Expandable 3D Scene Generation  <br> using Latent Tri-plane Extrapolation</br>
-                <small>
-                    <b>ACM Transaction on Graphics (SIGGRAPH 2024)</b>
-                </small>
+                <small style="color:#9d2020;">ACM Transaction on Graphics (SIGGRAPH 2024)</small>
             </h2>
+
         </div>
         <div class="row">
+
+
+        </div>
+
+        <div class="row">
             <div class="col-md-12 text-center">
+
+
                 <ul class="list-inline">
                     <li>
 
                         <a href="https://scholar.google.com/citations?user=rDXxDawAAAAJ">
-                            Zhennan Wu  </a>
+                            Zhennan Wu
+                            <sup style="color:#d54322;">1</sup>
+                        </a>
 <!--                        </br> The University of Tokyo-->
                     </li>
                     <li>
                         <a href="https://yang-l1.github.io/">
                             Yang Li  </a>
+                        <sup style="color:#d54322;">4,<strong>†</strong></sup>
 <!--                        </br> Tencent-->
                     </li>
                     <li>
                         <a href="https://scholar.google.com/citations?user=svfuXpwAAAAJ&hl=zh-CN">
                             Han Yan </a>
-
+                            <sup style="color:#d54322;">2</sup>
 <!--                        </br> Shanghai Jiao Tong University-->
                     </li>
                     <li>
                         <a href="https://scholar.google.com/citations?user=rv9ymNYAAAAJ&hl=zh-CN">
                             Taizhang Shang </a>
+                        <sup style="color:#d54322;">4</sup>
 <!--                        </br> Tencent-->
                     </li>
                     <li>
                         <a href="https://weixuansun.github.io/weixuansun-github.io/">
                         Weixuan Sun </a>
+                        <sup style="color:#d54322;">4</sup>
                     </li>
                     <li>
                         <a href="https://scholar.google.com/citations?user=J6ylgW0AAAAJ&hl=zh-CN">
                         Senbo Wang </a>
+                            <sup style="color:#d54322;">4</sup>
                     </li><br>
                     <li>
-                        <a href="linkedin.com/in/ruikai-cui-8185501a2">
+                        <a href="https://www.linkedin.com/in/ruikai-cui-8185501a2/">
                         Ruikai Cui </a>
+                        <sup style="color:#d54322;">3</sup>
                     </li>
                     <li>
                         <a href="https://weizheliu.github.io/">
-                            Weizhe Liu </a>
+                            Weizhe Liu
+                        </a>
+                        <sup style="color:#d54322;">4</sup>
 <!--                        </br> Tencent-->
                     </li>
                     <li>
                         <a href="https://www.nii.ac.jp/en/faculty/architecture/sato_hiroyuki/">
-                            Hiroyuki Sato </a>
-<!--                        </br> NII Japan, The University of Tokyo-->
+                            Hiroyuki Sato
+                            </a>
+                            <sup style="color:#d54322;">1</sup>
+                        <!--                        </br> NII Japan, The University of Tokyo-->
                     </li>
                     <li>
                         <a href="http://users.cecs.anu.edu.au/~hongdong/">
                         Hongdong Li </a>
+                    <sup style="color:#d54322;">3</sup>
 <!--                        </br> Australian National University-->
                     </li>
                     <li>
                         <a href="https://github.com/panji530">
                         Pan Ji</a>
+                        <sup style="color:#d54322;">4</sup>
 <!--                        </br> Tencent-->
                     </li>
                 </ul>
             </div>
         </div>
+
+
+
+        <div class="row">
+
+            <div class="col-md-12 text-center">
+            <sup style="color:#d54322;"><strong>†</strong></sup>Corresponding Author
+            </div>
+
+            <div class="col-md-12 text-center">
+
+
+                        <sup style="color:#d54322;">1</sup>The University of Tokyo
+&nbsp;&nbsp;
+                        <sup style="color:#d54322;">2</sup>Shanghai Jiao Tong University
+&nbsp;&nbsp;
+                        <sup style="color:#d54322;">3</sup>Australia National University
+&nbsp;&nbsp;
+                        <sup style="color:#d54322;">4</sup>Tencent XR Vision Labs
+
+
+            </div>
+        </div>
+
 
 
         <div class="row">
@@ -228,16 +271,18 @@ space.
                 </h3>
                                  <p class="text-justify">
                       We propose 3D aware denoising U-Net to facilitate diffusion training on tri-plane. We leverage the pre-trained latent tri-plane diffusion model to expand a scene:
-                </p>
 
-                <image src="img/pseudo_extra.jpg"  align="center" width="45%"  class="img-responsive">
+                                 Given a kown block 𝑃 and an unknown block 𝑄 , the goal is to extrapolate the known latent tri-plane 𝑧𝑃 to obtain the unknown tri-plane 𝑧𝑄 (top row). This tri-plane extrapolation is factored into the extrapolation of three 2D planes separately (bottom row).
+                 </p>
 
-                <p style="text-align:center;">
+                <image src="img/pseudo_extra.jpg"  align="center" width="50%"  class="img-responsive">
 
-                <video id="v1" width="50%" autoplay loop muted>
+<!--                <p style="text-align:center;">-->
+
+                <video id="v1" width="55%" autoplay loop muted>
                   <source src="img/inference_new.mp4" type="video/mp4" />
                 </video>
-                </p>
+<!--                </p>-->
 
 
 
@@ -265,12 +310,15 @@ space.
                 <video id="v2" width="100%" autoplay loop muted>
                   <source src="img/comparison.mp4" type="video/mp4" />
                 </video>
-                <p class="text-justify">
-                    Using layout control to create rooms that do not exist in the training set.
-                </p>
+<!--                <p class="text-justify">-->
+<!--                    Using layout control to create rooms that do not exist in the training set.-->
+<!--                </p>-->
                 <video id="v2" width="100%" autoplay loop muted>
                   <source src="img/novel.mp4" type="video/mp4" />
                 </video>
+                <p style="text-align:center;">
+                    <image src="img/room_large.jpg"   class="img-responsive">
+                </p>
             </div>
         </div>
 
@@ -283,7 +331,6 @@ space.
                 <h3>
                     Citation
                 </h3>
-
 
 
                 <div class="form-group col-md-20 col-md-offset-0">
@@ -301,6 +348,33 @@ space.
                 </div>
             </div>
         </div>
+
+        <div class="row">
+<!--            <div class="col-md-20 col-md-offset-0">-->
+            <div class="col-md-8 col-md-offset-2">
+
+                <h3>
+                    Acknowledgement
+                </h3>
+                <div class="form-group col-md-20 col-md-offset-0">
+                   The contributions of Zhennan Wu, Han Yan, and Ruikai Cui are made during their interships in Tencent XR Vision Labs.
+                </div>
+            </div>
+        </div>
+
+
+                  </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:center;font-size:small;">
+                    This website is based on <a href="https://jonbarron.info/mipnerf/">mip-Nerf</a>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
 
     </div>
 </body>
