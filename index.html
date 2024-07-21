@@ -118,7 +118,47 @@
                 </td>
               </tr>
 
+            <!-- ruikai eccv -->
+              <tr onmouseout="_3dseg_stop()" onmouseover="_3dseg_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <a href="https://weizheliu.github.io/NeuSDFusion/">
+                      <div class="two" id="3dseg_image" style="opacity: 0;">
+                        <img src="blockfusion/img/icon.png" width="160">
+                      </div>
+                      <img src="blockfusion/img/icon.png" width="160">
+                    </a>
+                  </div>
 
+                  <script type="text/javascript">
+                    function _3dseg_start() {
+                      document.getElementById('3dseg_image').style.opacity = 1;
+                    }
+                    function _3dseg_stop() {
+                      document.getElementById('3dseg_image').style.opacity = 0;
+                    }
+                    optnrt_stop();
+                  </script>
+                </td>
+
+                <td style="padding:20px;width:75%;vertical-align:middle">
+
+                  <a href="https://yang-l1.github.io/blockfusion/">
+                    <papertitle>
+                    NeuSDFusion: A Spatial-Aware Generative Model for 3D Shape Completion, Reconstruction, and Generation
+                  </a>
+                  <br>
+                  Ruikai Cui, Weizhe Liu, Weixuan Sun, Senbo Wang, Taizhang Shang,<b> Yang Li </b>, Xibin Song, Han Yan, Zhennan Wu, Shenzhou Chen, Hongdong Li, Pan Ji
+                  <br>
+                  <b>ECCV 2024</b><br>
+	    	      <a href="https://weizheliu.github.io/NeuSDFusion/">Project Page</a>|
+                  <a href="https://arxiv.org/abs/2403.18241">Paper</a>
+                  <p>
+
+                  </p>
+
+                </td>
+              </tr>
 
 
              <!-- 3dsegmentor -->
