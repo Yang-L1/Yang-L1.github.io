@@ -71,11 +71,57 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+
+              <!-- Sketch2Scene -->
+              <tr onmouseout="_3dseg_stop()" onmouseover="_3dseg_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <a href="https://xrvisionlabs.github.io/Sketch2Scene/">
+                      <div class="two" id="3dseg_image" style="opacity: 0;">
+                        <img src="main_page/images/s2scene.jpg" width="170">
+                      </div>
+                      <img src="main_page/images/s2scene.jpg" width="170">
+                    </a>
+                  </div>
+
+                  <script type="text/javascript">
+                    function _3dseg_start() {
+                      document.getElementById('3dseg_image').style.opacity = 1;
+                    }
+                    function _3dseg_stop() {
+                      document.getElementById('3dseg_image').style.opacity = 0;
+                    }
+                    optnrt_stop();
+                  </script>
+                </td>
+
+                <td style="padding:20px;width:75%;vertical-align:middle">
+
+                  <a href="https://xrvisionlabs.github.io/Sketch2Scene/">
+                    <papertitle>
+                      Sketch2Scene: Automatic Generation of Interactive 3D Game Scenes from User's Casual Sketches
+                  </a>
+                  <br>
+                  Yongzhi Xu, Yonhon Ng, Yifu Wang, Inkyu Sa, Yunfei Duan, <b>Yang Li</b>, Pan Ji, Hongdong Li
+                  <br>
+                  <b>Arxiv preprint 2024 </b><br>
+                  <a href="https://xrvisionlabs.github.io/Sketch2Scene/">Project Page</a>|
+                  <a href="https://arxiv.org/abs/2408.04567">Paper</a>|
+                  <a href="https://www.youtube.com/watch?v=j1jZ-An_uoc">video</a>
+                  <p>
+                    This paper proposes a novel approach for automatically generating interactive (i.e., playable) 3D game scenes from users' casual prompts, including hand-drawn sketches and text descriptions.
+                  </p>
+
+                </td>
+              </tr>
+
+
+
             <!-- han sigais -->
               <tr onmouseout="_3dseg_stop()" onmouseover="_3dseg_start()">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <a href="https://arxiv.org/abs/2403.16210">
+                    <a href="https://wolfball.github.io/frankenstein">
                       <div class="two" id="3dseg_image" style="opacity: 0;">
                         <img src="main_page/images/han24.png" width="170">
                       </div>
@@ -96,7 +142,7 @@
 
                 <td style="padding:20px;width:75%;vertical-align:middle">
 
-                  <a href="https://arxiv.org/abs/2403.16210">
+                  <a href="https://wolfball.github.io/frankenstein">
                     <papertitle>
                       Frankenstein: Generating Semantic-Compositional 3D Scenes in One Tri-Plane
                   </a>
@@ -104,6 +150,7 @@
                   Han Yan, <b>Yang Li</b>, Zhennan Wu, Shenzhou Chen, Weixuan Sun, Taizhang Shang, Weizhe Liu, Tian Chen, Xiaqiang Dai, Chao Ma, Hongdong Li, Pan Ji
                   <br>
                   <b>SIGGRAPH Asia 2024 </b><br>
+                  <a href="https://wolfball.github.io/frankenstein">Project Page</a>|
                   <a href="https://arxiv.org/abs/2403.16210">Paper</a>|
                   <a href="https://www.youtube.com/watch?v=lRn-HqyCrLI">video</a>
                   <p>
@@ -150,13 +197,15 @@
 
                    Zhennan Wu, <b> Yang Li <strong style="color:#d54322;">†</strong></b> , Han Yan,  Taizhang Shang,  Weixuan Sun,  Senbo Wang,  Ruikai Cui, Weizhe Liu,  Hiroyuki Sato, Hongdong Li, and  Pan Ji
                   <br>
-                  <b>ACM Trans. on Graphics (SIGGRAPH 2024) </b>
-                  &nbsp <font color="red"><strong>(Selected as SIGGRAPH Trailer)</strong></font>
+                  <b>Transaction on Graphics 2024 </b>
+                  &nbsp <font color="red"><strong>(Selected as <a href="https://www.youtube.com/watch?v=tjYVcOJONdI&t=188s" style="color:#FF0000;text-decoration: underline">SIGGRAPH 2024 Trailer Video</a>)</strong></font>
                   <br>
 	    	  <a href="https://yang-l1.github.io/blockfusion/">Project Page</a>|
                   <a href="https://arxiv.org/abs/2401.17053">Paper</a>|
                   <a href="https://www.youtube.com/watch?v=PxIBtd6G0mA">video</a>|
                   <a href="https://github.com/Tencent/BlockFusion/">Code</a>
+
+
 
                   <p>
 			  We introduce the first 3D diffusion based approach for directly generating large unbounded 3D scene in both inddor and outdoor scenarios.
