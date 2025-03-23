@@ -71,7 +71,46 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+            <!-- bag -->
+              <tr onmouseout="_3dseg_stop()" onmouseover="_3dseg_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+<!--                    <a href="https://wolfball.github.io/frankenstein">-->
+                      <div class="two" id="3dseg_image" style="opacity: 0;">
+                        <img src="main_page/images/bag.jpg" width="170">
+                      </div>
+                      <img src="main_page/images/bag.jpg" width="170">
+<!--                    </a>-->
+                  </div>
 
+                  <script type="text/javascript">
+                    function _3dseg_start() {
+                      document.getElementById('3dseg_image').style.opacity = 1;
+                    }
+                    function _3dseg_stop() {
+                      document.getElementById('3dseg_image').style.opacity = 0;
+                    }
+                    optnrt_stop();
+                  </script>
+                </td>
+
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://bag-3d.github.io/">
+                    <papertitle>
+                    BAG: Body-Aligned 3D Wearable Asset Generation
+                  </a>
+                  <br>
+                  Zhongjin Luo,  <b>Yang Li <strong style="color:#d54322;">†</strong></b>, Mingrui Zhang, Senbo Wang, Han Yan, Xibin Song, Taizhang Shang, Wei Mao, Hongdong Li, Xiaoguang Han, Pan Ji
+                  <br>
+                  <b>Arxiv preprint 2025 </b><br>
+                  <a href="https://bag-3d.github.io">Project Page</a>|
+                  <a href="https://arxiv.org/abs/2501.16177">Paper</a>|
+                  <a href="https://youtu.be/XJtG82LjQKc">video</a>
+                  <p>We present BAG, a Body-aligned Asset Generation method to output 3D wearable asset that can be automatically dressed on given 3D human bodies.
+                  </p>
+
+                </td>
+              </tr>
 
             <!-- phycage -->
               <tr onmouseout="_3dseg_stop()" onmouseover="_3dseg_start()">
@@ -103,7 +142,7 @@
                     PhyCAGE: Physically Plausible Compositional 3D Asset Generation from a Single Image
                   </a>
                   <br>
-                  Han Yan, Mingrui Zhang, <b>Yang Li</b>, Chao Ma, Pan Ji
+                  Han Yan, Mingrui Zhang, <b>Yang Li <strong style="color:#d54322;">†</strong></b>, Chao Ma, Pan Ji
                   <br>
                   <b>Arxiv preprint 2024 </b><br>
                   <a href="https://wolfball.github.io/phycage">Project Page</a>|
@@ -237,7 +276,7 @@ We introduce a novel framework, the Large Image and Point Cloud Alignment Model 
                       Frankenstein: Generating Semantic-Compositional 3D Scenes in One Tri-Plane
                   </a>
                   <br>
-                  Han Yan, <b>Yang Li</b>, Zhennan Wu, Shenzhou Chen, Weixuan Sun, Taizhang Shang, Weizhe Liu, Tian Chen, Xiaqiang Dai, Chao Ma, Hongdong Li, Pan Ji
+                  Han Yan, <b>Yang Li <strong style="color:#d54322;">†</strong></b>, Zhennan Wu, Shenzhou Chen, Weixuan Sun, Taizhang Shang, Weizhe Liu, Tian Chen, Xiaqiang Dai, Chao Ma, Hongdong Li, Pan Ji
                   <br>
                   <b>SIGGRAPH Asia 2024 </b><br>
                   <a href="https://wolfball.github.io/frankenstein">Project Page</a>|
